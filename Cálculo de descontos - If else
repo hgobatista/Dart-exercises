@@ -1,0 +1,42 @@
+void main(){  
+  
+  /* Digite seu salário bruto */
+  double salarioBruto = 2100;
+    
+  //-----------------------------------------------
+    
+  /* Cálculo INSS */
+  double inss;  
+  if(salarioBruto <= 1100.00){
+    inss = 0.075;
+  }else if(salarioBruto > 1100.00 && salarioBruto <= 2203.48){
+    inss = 0.09;
+  }else if(salarioBruto > 2203.48 && salarioBruto <= 3305.22){
+    inss = 0.12;
+  }else if(salarioBruto > 3305.22 && salarioBruto <= 6433.57){
+    inss = 0.14;
+  };
+  var descInss = salarioBruto * inss;
+  
+  /* Cálculo Imposto de Renda */
+  double impRenda;
+  if(salarioBruto <=1903.98){
+    impRenda = 1;
+  }else if(salarioBruto > 1903.98 && salarioBruto <= 2826.65){
+    impRenda = 0.075;
+  }else if(salarioBruto > 2826.55 && salarioBruto <= 3751.05){
+    impRenda = 0.15;
+  }else if(salarioBruto > 3751.05 && salarioBruto <= 4664.68){
+    impRenda = 0.225;
+  }
+  else{
+    impRenda = 0.275;
+  };
+  var descImpRenda = salarioBruto * impRenda;
+  
+  /* Salário líquido final */
+
+  var salarioLiquido = salarioBruto - ( descInss + descImpRenda);
+  print('Seu salário líquido será de: $salarioLiquido reais');
+  
+}

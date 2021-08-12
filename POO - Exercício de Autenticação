@@ -1,0 +1,29 @@
+class Autenticacao {
+  //Atributos
+  String usuario;
+  String senha;
+  
+  //Métodos
+  void autenticar(){
+    
+    String usuarioBanco = "hugobatista";
+    String senhaBanco = "12345";
+    
+    if(this.usuario == usuarioBanco && this.senha == senhaBanco){
+      print('Autenticação concluída');
+    }else if( this.usuario == usuarioBanco){
+      print('Senha incorreta');
+    }else if(this.senha == senhaBanco){
+      print('Usuário incorreto');
+    }else{
+      print('Usuário e senha incorretos');
+    }
+  }
+}
+
+void main(){
+  Autenticacao autenticacao = new Autenticacao(); //instância da classe em obj
+  autenticacao.usuario = "hugobatista";
+  autenticacao.senha = "12345";
+  autenticacao.autenticar();
+}

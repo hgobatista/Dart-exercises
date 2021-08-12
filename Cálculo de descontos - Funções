@@ -1,0 +1,84 @@
+
+/* Digite seu nome e seu salário bruto */
+
+
+  String nome = 'Hugo Fernando Batista'; // Digite seu nome 'entre as aspas'.
+  double salarioBruto = 5400.00; // Digite seu salário bruto.
+
+
+//Cálculos ---------------------------------------------------------------------
+
+/* Cálculo INSS */
+
+double calcularInss(double salarioBruto ){
+  double inss;
+  if(salarioBruto <= 1100.00){
+    inss = 0.075;
+  }else if(salarioBruto > 1100.00 && salarioBruto <= 2203.48){
+    inss = 0.09;
+  }else if(salarioBruto > 2203.48 && salarioBruto <= 3305.22){
+    inss = 0.12;
+  }else{ salarioBruto > 3305.22 && salarioBruto <= 6433.57;
+    inss = 0.14;
+  }
+  double descInss = salarioBruto * inss;
+  return descInss;
+}
+
+/* Cálculo Imposto de Renda */
+
+double calcularImpRenda(double salarioBruto){
+  double impRenda;
+  if(salarioBruto <= 1903.98){
+    impRenda = 1;
+  }else if(salarioBruto > 1903.98 && salarioBruto <= 2826.65){
+    impRenda = 0.075;
+  }else if(salarioBruto > 2826.65 && salarioBruto <= 3751.05){
+    impRenda = 0.15;
+  }else if(salarioBruto > 3751.05 && salarioBruto <= 4664.68){
+    impRenda = 0.225;
+  }else{
+    impRenda = 0.275;
+  }
+  
+  double descImpRenda = salarioBruto * impRenda;
+  return descImpRenda;
+}
+
+//---------------------------------------------------------------------------
+
+
+/* Função Principal */
+
+void main(){
+  
+/* Digite seu salário bruto */
+  
+  print('------------------------------------------------');
+  print('');
+  
+  double salarioInss = calcularInss(salarioBruto);
+  String inssFinal = salarioInss.toStringAsFixed(2);
+  double salarioImpRenda = calcularImpRenda(salarioBruto);
+  String impostoFinal = salarioImpRenda.toStringAsFixed(2);
+  double salarioLiquido = salarioBruto - (salarioInss + salarioImpRenda);
+  String salarioLiquidoFinal = salarioLiquido.toStringAsFixed(2);
+  
+  print(' Nome: $nome');
+  print('');
+  print(' Seu salário bruto é de: $salarioBruto reais');
+  print('');
+  print(' Foram descontados do seu salário:');
+  print('  - Imposto de Renda: $impostoFinal reais');
+  print('  - INSS: $inssFinal reais');
+  print('');
+  print(' Seu salário líquido é de: $salarioLiquidoFinal reais');
+  print('');
+  print('------------------------------------------------');
+  
+//---------------------------------------------------------------------------
+  
+
+
+  
+}
